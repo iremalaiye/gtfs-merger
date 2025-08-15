@@ -20,7 +20,7 @@ This allows you to collect public transport data from different sources and work
 ## Installation
 
  Using Shaded JAR (No Maven Needed)
-1. Download the Shaded JAR file
+1. Download the Shaded JAR file from releases
 `gtfs-1.0-shaded.jar`
 
 2. Add it to another Java project:
