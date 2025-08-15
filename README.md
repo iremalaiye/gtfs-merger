@@ -44,7 +44,8 @@ import org.example.FullGtfsMerger;
                 "path/to/all_feeds",   // folder containing GTFS feed subfolders
                 "path/to/merged",      // output folder for merged files
                 "long"                 // headerChoice determines how the reference header is chosen:
-                                       // "long"  → Choose the header with the most columns. "short" → Choose the header with the fewest columns.
+                                       // "long"  → Choose the header with the most columns.
+                                       // "short" → Choose the header with the fewest columns.
             );
 
             if (success) {
