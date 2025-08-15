@@ -1,0 +1,16 @@
+# Maven build output
+/target/
+
+# IntelliJ IDEA files
+/.idea/
+/*.iml
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# Log/Temporary files
+*.log
+*.tmp
+*.bak
+*.swp
