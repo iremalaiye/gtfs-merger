@@ -29,17 +29,22 @@ This allows you to collect public transport data from different sources and work
 - Copy the Shaded JAR to this folder.  
 - In IntelliJ: Go to File → Project Structure → Modules → Dependencies → + → JARs or directories and add the JAR.
 
-## Usage
+## Usage of Gtfs Merger
 
+## Usage:
 ```java
+
 import org.example.FullGtfsMerger;
 
     public static void main(String[] args) {
         FullGtfsMerger merger = new FullGtfsMerger();
         try {
             boolean success =
-                    merger.mergeAllFeeds("C:\\Users\\irema\\IdeaProjects\\gtfsMerge\\src\\all_feeds",
-                            "C:\\Users\\irema\\IdeaProjects\\gtfsMerge\\src\\merged","long");
+                    merger.mergeAllFeeds(
+                "path/to/all_feeds",   // folder containing GTFS feed subfolders
+                "path/to/merged",      // output folder for merged files
+                "long"                 // "long" = most columns, "short" = fewest columns
+            );
 
             if (success) {
                 System.out.println("Merge operation is successful.");
