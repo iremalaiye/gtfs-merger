@@ -17,11 +17,10 @@ This allows you to collect public transport data from different sources and work
 -  If you use the shaded JAR, no Maven or additional dependencies are required — OpenCSV and all other dependencies are already included.
 
 
-## Installation
-
+## Usage of Gtfs Merger
  Using Shaded JAR (No Maven Needed)
-1. Download the Shaded JAR file from releases  
-`gtfs-1.0-shaded.jar`
+ 1. Download the Shaded JAR file from releases.  
+ `releases/gtfs-1.0-shaded.jar`
 
 2. Add it to another Java project:
 
@@ -29,20 +28,32 @@ This allows you to collect public transport data from different sources and work
 - Copy the Shaded JAR to this folder.  
 - In IntelliJ: Go to File → Project Structure → Modules → Dependencies → + → JARs or directories and add the JAR.
 
-## Usage of Gtfs Merger
+ 3. Prepare your feed folders
+ Gather all your GTFS feed folders under one main folder.
 
-## Usage:
+ C:/Users/YourName/GTFSFeeds/  
+    ├─ GTFS_İzmir/  
+    ├─ GTFS_Antep/  
+    └─ GTFS_Muğla/
+    
+
+ 4. Start the merge process using Java code.  
+   Replace C:/Users/YourName/GTFSFeeds and C:/Users/YourName/MergedFeeds with your own folder paths.  
+   You can also set the header preference to "long" or "short." This determines which CSV header will be used as the reference when merging files:
+     - "long"  → Choose the header with the most columns.  
+     - "short" → Choose the header with the fewest columns.
+
+
 ```java
-
-import org.example.FullGtfsMerger;
-
+import org.example.FullGtfsMerge;
+public class Main {
     public static void main(String[] args) {
         FullGtfsMerger merger = new FullGtfsMerger();
         try {
             boolean success =
                     merger.mergeAllFeeds(
-                "path/to/all_feeds",   // folder containing GTFS feed subfolders
-                "path/to/merged",      // output folder for merged files
+               "C:/Users/YourName/GTFSFeeds",   // your folder containing GTFS feed subfolders
+               "C:/Users/YourName/MergedFeeds",      //your output folder for merged files
                 "long"                 // headerChoice determines how the reference header is chosen:
                                        // "long"  → Choose the header with the most columns.
                                        // "short" → Choose the header with the fewest columns.
@@ -59,3 +70,4 @@ import org.example.FullGtfsMerger;
         }
 
     }
+}
