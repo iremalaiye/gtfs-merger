@@ -60,11 +60,10 @@ public class FullGtfsMerger {
             return false;
         }
 
-        //rootFolder and outputFolder cannot be the same.
-        if (root.getCanonicalPath().equals(outDir.getCanonicalPath())) {
-            System.out.println("Root folder and output folder cannot be the same!");
-            return false;
+        if (outDir.getCanonicalPath().startsWith(root.getCanonicalPath())) {
+            throw new IllegalArgumentException("Output folder cannot be the same as or inside the input folder.");
         }
+
 
         // Loop through all GTFS files:
         // Call mergeFileIfExists for each filename in PRIMARY_ID_FIELDS
