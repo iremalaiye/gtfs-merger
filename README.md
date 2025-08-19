@@ -10,12 +10,15 @@ This allows you to collect public transport data from different sources and work
 - Reads and writes CSV files using OpenCSV.
 - Saves merged files to the specified output folder.
 
+
 ## Requirements
 
--  Java 8 or higher.
+-  Java 8 or higher
 
--  If you use the shaded JAR, no Maven or additional dependencies are required — OpenCSV and all other dependencies are already included.
+-  Maven (if building from source; all dependencies including OpenCSV are managed via Maven)
 
+Note:
+If you use the shaded JAR, no Maven or additional dependencies are required — OpenCSV and all other dependencies are already included.  
 
 ## Usage of Gtfs Merger
  Using Shaded JAR (No Maven Needed)
@@ -38,8 +41,8 @@ This allows you to collect public transport data from different sources and work
     
 
  4. Start the merge process using Java code.  
-   Replace  "<your_gtfs_feeds_path>" and  "<your_output_path>" with your own folder paths.  
-   You can also set the header preference to "long" or "short." This determines which CSV header will be used as the reference when merging files:
+   Replace  **"<your_gtfs_feeds_path>"** and  **"<your_output_path>"** with your own folder paths.  
+   You can also set the header preference to **"long"** or **"short."** This determines which CSV header will be used as the reference when merging files:
      - "long"  → Choose the header with the most columns.  
      - "short" → Choose the header with the fewest columns.
 
