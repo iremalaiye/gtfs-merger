@@ -31,14 +31,14 @@ This allows you to collect public transport data from different sources and work
  3. Prepare your feed folders  
  Gather all your GTFS feed folders under one main folder.  
  
-    <your_gtfs_feeds_path>/   
+    <your_gtfs_feeds_path>   
              ├─ GTFS_İzmir/  
              ├─ GTFS_Antep/  
              └─ GTFS_Muğla/
     
 
  4. Start the merge process using Java code.  
-   Replace  "<your_gtfs_feeds_path>/" and  "<your_output_path>/" with your own folder paths.  
+   Replace  "<your_gtfs_feeds_path>" and  "<your_output_path>" with your own folder paths.  
    You can also set the header preference to "long" or "short." This determines which CSV header will be used as the reference when merging files:
      - "long"  → Choose the header with the most columns.  
      - "short" → Choose the header with the fewest columns.
@@ -52,8 +52,8 @@ public class Main {
         try {
             boolean success =
                     merger.mergeAllFeeds(
-              "<your_gtfs_feeds_path>/" , // Path to the folder containing GTFS feed subfolders
-              "<your_output_path>/",      // Path to the folder where merged files will be saved
+              "<your_gtfs_feeds_path>" , // Path to the folder containing GTFS feed subfolders
+              "<your_output_path>",      // Path to the folder where merged files will be saved
                "long"                  // headerChoice determines how the reference header is chosen:
                                        // "long"  → Choose the header with the most columns.
                                       // "short" → Choose the header with the fewest columns.
