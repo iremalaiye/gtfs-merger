@@ -28,35 +28,35 @@ This allows you to collect public transport data from different sources and work
 - Copy the Shaded JAR to this folder.  
 - In IntelliJ: Go to File → Project Structure → Modules → Dependencies → + → JARs or directories and add the JAR.
 
- 3. Prepare your feed folders
- Gather all your GTFS feed folders under one main folder.
-
- C:/Users/YourName/GTFSFeeds/  
-    ├─ GTFS_İzmir/  
-    ├─ GTFS_Antep/  
-    └─ GTFS_Muğla/
+ 3. Prepare your feed folders  
+ Gather all your GTFS feed folders under one main folder.  
+ 
+    <your_gtfs_feeds_path>/   
+             ├─ GTFS_İzmir/  
+             ├─ GTFS_Antep/  
+             └─ GTFS_Muğla/
     
 
  4. Start the merge process using Java code.  
-   Replace C:/Users/YourName/GTFSFeeds and C:/Users/YourName/MergedFeeds with your own folder paths.  
+   Replace  "<your_gtfs_feeds_path>/" and  "<your_output_path>/" with your own folder paths.  
    You can also set the header preference to "long" or "short." This determines which CSV header will be used as the reference when merging files:
      - "long"  → Choose the header with the most columns.  
      - "short" → Choose the header with the fewest columns.
 
 
 ```java
-import org.example.FullGtfsMerge;
+import org.example.FullGtfsMerger;
 public class Main {
     public static void main(String[] args) {
         FullGtfsMerger merger = new FullGtfsMerger();
         try {
             boolean success =
                     merger.mergeAllFeeds(
-               "C:/Users/YourName/GTFSFeeds",   // your folder containing GTFS feed subfolders
-               "C:/Users/YourName/MergedFeeds",      //your output folder for merged files
-                "long"                 // headerChoice determines how the reference header is chosen:
+              "<your_gtfs_feeds_path>/" , // Path to the folder containing GTFS feed subfolders
+              "<your_output_path>/",      // Path to the folder where merged files will be saved
+               "long"                  // headerChoice determines how the reference header is chosen:
                                        // "long"  → Choose the header with the most columns.
-                                       // "short" → Choose the header with the fewest columns.
+                                      // "short" → Choose the header with the fewest columns.
             );
 
             if (success) {
