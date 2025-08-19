@@ -12,7 +12,7 @@ This allows you to collect public transport data from different sources and work
 
 ## Requirements
 
--  Java 11 or higher.
+-  Java 8 or higher.
 
 -  If you use the shaded JAR, no Maven or additional dependencies are required — OpenCSV and all other dependencies are already included.
 
