@@ -31,7 +31,23 @@ If you use the shaded JAR, no Maven or additional dependencies are required — 
 - Copy the Shaded JAR to this folder.  
 - In IntelliJ: Go to File → Project Structure → Modules → Dependencies → + → JARs or directories and add the JAR.
 
- 3. Prepare your feed folders  
+3.Download the javadoc.jar file from releases.    
+ `releases/gtfs-1.0-javadoc.jar`  
+
+4.Adding JavaDoc to a Shaded JAR
+- Go to Project Structure → Modules → Dependencies.
+
+- Find gtfs-1.0-shaded.jar in the list.
+
+- Right-click it → Edit (or double-click).
+
+- In the window that opens, find the "Attach JavaDoc..." button (in some versions, it may also be + → Attach JavaDoc).
+
+- Select gtfs-1.0-javadoc.jar and click OK.
+
+From now on, when you hover over FullGtfsMerger or mergeAllFeeds in the IDE, the parameter descriptions and JavaDocs will appear.  
+
+ 5. Prepare your feed folders  
  Gather all your GTFS feed folders under one main folder.  
  
     <your_gtfs_feeds_path>   
@@ -40,7 +56,7 @@ If you use the shaded JAR, no Maven or additional dependencies are required — 
              └─ GTFS_Muğla/
     
 
- 4. Start the merge process using Java code.  
+ 6. Start the merge process using Java code.  
    Replace  **"<your_gtfs_feeds_path>"** and  **"<your_output_path>"** with your own folder paths.  
    You can also set the header preference to **"long"** or **"short."** This determines which CSV header will be used as the reference when merging files:
      - "long"  → Choose the header with the most columns.  
