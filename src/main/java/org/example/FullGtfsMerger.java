@@ -5,6 +5,11 @@ import java.util.*;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
+
+/**
+ * FullGtfsMerger handles merging multiple GTFS feed folders into a single output folder.
+ */
+
 public class FullGtfsMerger {
 
     private static final Map<String, String[]> PRIMARY_ID_FIELDS = new HashMap<>();
@@ -44,6 +49,11 @@ public class FullGtfsMerger {
      */
     public boolean mergeAllFeeds(String rootFolder, String outputFolder, String headerChoice) throws IOException,CsvValidationException{
 
+        //null controls
+        if (rootFolder == null) throw new IllegalArgumentException("Input folder path cannot be null");
+        if (outputFolder == null) throw new IllegalArgumentException("Output folder path cannot be null");
+        String choice = (headerChoice != null) ? headerChoice.toLowerCase() : "long";
+
         //gtfs feed folder
         File root = new File(rootFolder);
         //merged folder
@@ -68,7 +78,7 @@ public class FullGtfsMerger {
         // Loop through all GTFS files:
         // Call mergeFileIfExists for each filename in PRIMARY_ID_FIELDS
         for (String fileName : PRIMARY_ID_FIELDS.keySet()) {
-            mergeFileIfExists(feedDirs, outputFolder, fileName, headerChoice);
+            mergeFileIfExists(feedDirs, outputFolder, fileName, choice);
         }
 
         return true;
@@ -142,7 +152,8 @@ public class FullGtfsMerger {
         if (headers.isEmpty()) throw new IOException("No valid headers found in input files.");
 
         // Select the header based on the user's choice
-        switch (headerChoice.toLowerCase()) {
+
+        switch (headerChoice) {
             case "long":   // Return the header with the most columns
                 return headers.stream().max(Comparator.comparingInt(a -> a.length)).orElse(headers.get(0));
             case "short":  // Return the header with the fewest columns
