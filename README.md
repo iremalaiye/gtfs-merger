@@ -31,11 +31,11 @@ If you use the shaded JAR, no Maven or additional dependencies are required — 
 - Copy the Shaded JAR to this folder.  
 - In IntelliJ: Go to File → Project Structure → Modules → Dependencies → + → JARs or directories and add the JAR.
 
-3.Download the javadoc.jar file from releases.    
+3. Download the javadoc.jar file from releases.    
  `releases/gtfs-1.0-javadoc.jar`  
 
-4.Adding JavaDoc to a Shaded JAR
-- Go to Project Structure → Modules → Dependencies.
+4. Adding JavaDoc to a Shaded JAR
+- In IntelliJ: Go to File → Project Structure → Modules → Dependencies.
 
 - Find gtfs-1.0-shaded.jar in the list.
 
