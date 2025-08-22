@@ -5,7 +5,7 @@ public class Main {
         FullGtfsMerger merger = new FullGtfsMerger();
         try {
             boolean success =
-                    merger.mergeAllFeeds("C:\\Users\\irema\\IdeaProjects\\gtfsMerge\\src\\all_feeds",
+                    merger.mergeFeedsFromZips("C:\\Users\\irema\\IdeaProjects\\gtfsMerge\\src\\feed",
                             "C:\\Users\\irema\\IdeaProjects\\gtfsMerge\\src\\merged","long");
 
             if (success) {
@@ -19,5 +19,7 @@ public class Main {
         }
 
     }
+
 }
+
 
