@@ -43,6 +43,7 @@ GTFS Merger **combines multiple GTFS datasets** into a single directory with a u
    > **Note:** This step is optional. The shaded JAR works perfectly fine without attaching the JavaDoc. It’s only for a better developer experience.
 4. Adding JavaDoc to a Shaded JAR  (Optional)  
    If you want to see parameter descriptions and JavaDocs in your IDE (like IntelliJ):
+- Copy the JavaDoc JAR to the same `releases/` folder in your project.  
 - In IntelliJ: Go to File → Project Structure → Modules → Dependencies.
 
 - Find **gtfs-1.0-shaded.jar** in the list.
