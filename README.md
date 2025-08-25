@@ -20,6 +20,10 @@ GTFS Merger **combines multiple GTFS datasets** into a single directory with a u
 -  Maven (if building from source; all dependencies including OpenCSV are managed via Maven)
 
   > **Note:** If you use the shaded JAR, no Maven or additional dependencies are required — OpenCSV and all other dependencies are already included.
+
+### Included Files
+- `gtfs-1.0-shaded.jar` → Executable JAR containing all dependencies.
+- `gtfs-1.0-javadoc.jar` → JavaDoc documentation; shows method parameters and descriptions when imported in the IDE.(optional)
   
 ## Usage of Gtfs Merger
  Using Shaded JAR (No Maven Needed)
